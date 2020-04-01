@@ -13,8 +13,6 @@ public class ExceptionResponseBuilder {
     private List<String> errorMessages;
     private String requestedURI;
     private Timestamp timestamp;
-    private String requestId;
-    private String flowId;
 
     /**
      * Error messages exception response builder.
@@ -50,28 +48,6 @@ public class ExceptionResponseBuilder {
     }
 
     /**
-     * Request id exception response builder.
-     *
-     * @param requestId the request id
-     * @return the exception response builder
-     */
-    public ExceptionResponseBuilder requestId(String requestId) {
-        this.requestId = requestId;
-        return this;
-    }
-
-    /**
-     * Flow id exception response builder.
-     *
-     * @param flowId the flow id
-     * @return the exception response builder
-     */
-    public ExceptionResponseBuilder flowId(String flowId) {
-        this.flowId = flowId;
-        return this;
-    }
-
-    /**
      * Build exception response.
      *
      * @return the exception response
@@ -82,8 +58,6 @@ public class ExceptionResponseBuilder {
         exceptionResponse.setErrorMessages(this.errorMessages);
         exceptionResponse.setRequestedURI(this.requestedURI);
         exceptionResponse.setTimestamp(this.timestamp);
-        exceptionResponse.setRequestId(this.requestId);
-        exceptionResponse.setFlowId(this.flowId);
 
         return exceptionResponse;
     }

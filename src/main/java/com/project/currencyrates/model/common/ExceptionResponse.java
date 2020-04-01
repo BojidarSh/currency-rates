@@ -12,8 +12,6 @@ public class ExceptionResponse {
     private List<String> errorMessages;
     private String requestedURI;
     private Timestamp timestamp;
-    private String requestId;
-    private String flowId;
 
     /**
      * Gets error messages.
@@ -69,50 +67,12 @@ public class ExceptionResponse {
         this.timestamp = timestamp;
     }
 
-    /**
-     * Gets request id.
-     *
-     * @return the request id
-     */
-    public String getRequestId() {
-        return requestId;
-    }
-
-    /**
-     * Sets request id.
-     *
-     * @param requestId the request id
-     */
-    public void setRequestId(String requestId) {
-        this.requestId = requestId;
-    }
-
-    /**
-     * Gets flow id.
-     *
-     * @return the flow id
-     */
-    public String getFlowId() {
-        return flowId;
-    }
-
-    /**
-     * Sets flow id.
-     *
-     * @param flowId the flow id
-     */
-    public void setFlowId(String flowId) {
-        this.flowId = flowId;
-    }
-
     @Override
     public String toString() {
         return new StringJoiner(", ", ExceptionResponse.class.getSimpleName() + "[", "]")
                 .add("errorMessages=" + errorMessages)
                 .add("requestedURI='" + requestedURI + "'")
                 .add("timestamp=" + timestamp)
-                .add("requestId='" + requestId + "'")
-                .add("flowId='" + flowId + "'")
                 .toString();
     }
 }
